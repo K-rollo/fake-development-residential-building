@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+}
+h2 {
+  color: blue;
+}
+header {
+  background-color: black;
+  color: white;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.super-upper {
+  width: 70%;
+  height: auto;
+  margin: auto;
+}
+
+.upper-img {
+  width: 100%;
+  height: auto;
+}
+
+.upper-main {
+  background-color: rgb(126, 125, 125);
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: calc(75% + 20px);
+  height: auto;
+  margin: auto;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.main-content {
+  background-color: darkgrey;
+  width: 75%;
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.item {
+  background-color: lightgray;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item-name {
+  background-color: grey;
+  color: black;
+  text-align: center;
+  font-size: larger;
+  font-weight: bold;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.add-btn {
+  text-decoration: none;
+  background-color: rgb(224, 182, 182);
+  color: black;
+  width: 70%;
+  text-align: center;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+.add-btn:hover {
+  background-color: brown;
+}
