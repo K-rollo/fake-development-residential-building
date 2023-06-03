@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:width="http://www.w3.org/1999/xhtml"
-      xmlns:border="http://www.w3.org/1999/xhtml">
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:width="http://www.w3.org/1999/xhtml"
+  xmlns:border="http://www.w3.org/1999/xhtml"
+>
   <head>
     <meta charset="UTF-8" />
     <title>AppartmentsOffer</title>
@@ -11,32 +14,76 @@
     <header>
       <span class="title">FaKE Development</span>
     </header>
-
-    <div class="super-upper">
-      <img class="upper-img" src="resources/graphic.jpg" />
+    <div class="separator"></div>
+    <div class="top-image-field">
+      <img class="top-image" th:src="@{images/graphic.jpg}"/>
+    </div>
+    <div class="separator"></div>
+    <div class="top-links-field">
+      <span>
+        <a href="/" class="link-btn">Home</a>
+      </span>
+      <span>
+        <a href="/clients" class="link-btn">Clients register</a>
+      </span>
+      <span>
+        <a href="" class="link-btn">Apartments modification register</a>
+      </span>
+    </div>
+    <div class="separator"></div>
+    <div class="top-links-field">
+      <span>
+        <a href="/" class="link-btn">All apartments</a>
+      </span>
+      <span>
+        <a href="/rooms/1" class="link-btn">1 room apartments</a>
+      </span>
+      <span>
+        <a href="/rooms/2" class="link-btn">2 room apartments</a>
+      </span>
+      <span>
+        <a href="/rooms/3" class="link-btn">3 room apartments</a>
+      </span>
+      <span>
+        <a href="/rooms/4" class="link-btn">4 room apartments</a>
+      </span>
+      <span>
+        <a href="/available" class="link-btn">All available apartments</a>
+      </span>
+    </div>
+    <div class="separator"></div>
+    <div class="top-main-field">APARTMENTS LIST</div>
+    <div class="main-content">
+      <div class="apartment-details">Index</div>
+      <div class="apartment-details">Building</div>
+      <div class="apartment-details">Staircase</div>
+      <div class="apartment-details">Floor</div>
+      <div class="apartment-details">Number</div>
+      <div class="apartment-details">Area</div>
+      <div class="apartment-details">Rooms</div>
+      <div class="apartment-details">Status</div>
+      <div class="apartment-details">ClientId</div>
     </div>
 
-    <div class="upper-main">APARTMENTS LIST</div>
+    <div class="main-content" th:each="apartment : ${apartments}">
+      <div class="apartment-details" th:text="${apartment.id}"></div>
+      <div class="apartment-details" th:text="${apartment.building}"></div>
+      <div class="apartment-details" th:text="${apartment.staircase}"></div>
+      <div class="apartment-details" th:text="${apartment.floor}"></div>
+      <div class="apartment-details" th:text="${apartment.apartmentNumber}"></div>
+      <div class="apartment-details" th:text="${apartment.apartmentArea}"></div>
+      <div class="apartment-details" th:text="${apartment.amountOfRooms}"></div>
+      <div class="apartment-details" th:text="${apartment.status}"></div>
+      <div class="apartment-details" th:text="${apartment.clientId}"></div>
 
-    <div class="main-content">
-      <div class="item" th:each="apartment : ${apartments}">
-        <span class="item-name">Building: </span>
-        <span class="item-name" th:text="${apartment.buildingIndex}"></span>
-        <span class="item-name">Floor: </span>
-        <span class="item-name" th:text="${apartment.floorLevel}"></span>
-        <span class="item-name">Apartment no.: </span>
-        <span class="item-name" th:text="${apartment.number}"></span>
-
-        <span class="item-name">Living area:</span>
-        <span class="item-name"th:text="${apartment.area}"></span>
-        <span class="item-name">m2</span>
-        <span class="item-name">Rooms: </span>
-        <span class="item-name" th:text="${apartment.amountOfRooms}"></span>
-
-        <span><a href="" class="add-btn">Ask for price</a></span>
-        <span><a href="" class="add-btn">Make reservation</a></span>
-
+      <div class="apartment-details">
+        <a href="" class="modify-btn">Book</a>
+      </div>
+      <div class="apartment-details">
+        <a href="" class="modify-btn">Sell</a>
       </div>
     </div>
+    <div class="separator"></div>
+    <div class="top-main-field">Created in 2023</div>
   </body>
 </html>

@@ -2,6 +2,7 @@ CREATE TABLE APARTMENT (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     building VARCHAR(100) NOT NULL,
     staircase VARCHAR(100) NOT NULL,
+    floor BIGINT NOT NULL,
     apartment_number BIGINT NOT NULL,
     apartment_area FLOAT NOT NULL,
     amount_of_rooms TINYINT NOT NULL,
@@ -14,11 +15,11 @@ CREATE TABLE CLIENT (
     first_name VARCHAR(400) NOT NULL,
     last_name VARCHAR(400) NOT NULL,
     street VARCHAR(400),
-    number VARCHAR(400),
+    number_as_string VARCHAR(400),
     city VARCHAR(400),
-    zip_code VARCHAR(100),
-    phone_number VARCHAR(100) NOT NULL,
-    email_address VARCHAR(400) NOT NULL
+    zip_code_as_string VARCHAR(100),
+    phone_number_as_string VARCHAR(100) NOT NULL,
+    email_address_as_string VARCHAR(400) NOT NULL
 );
 
 ALTER TABLE APARTMENT

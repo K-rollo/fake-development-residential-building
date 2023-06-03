@@ -15,45 +15,89 @@ header {
   margin-left: 20px;
 }
 
-.super-upper {
+.separator {
+  width: 70%;
+  height: 20px;
+  margin: auto;
+}
+
+.top-image-field {
+  width: 30%;
+  height: auto;
+  margin-right: 0px;
+  margin: auto;
+}
+
+.top-image {
+  width: 100%;
+  height: auto;
+}
+
+.top-links-field {
+  background-color: white;
   width: 70%;
   height: auto;
   margin: auto;
 }
 
-.upper-img {
-  width: 100%;
-  height: auto;
-}
-
-.upper-main {
-  background-color: rgb(126, 125, 125);
+.link-btn {
+  text-decoration: none;
+  background-color: grey;
+  font-size: 2rem;
   color: white;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: calc(75% + 20px);
-  height: auto;
-  margin: auto;
-  font-size: 3rem;
   text-align: center;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid black;
 }
 
-.main-content {
-  background-color: darkgrey;
-  width: 75%;
+.link-btn:hover {
+  background-color: rgb(56, 64, 180);
+}
+
+.top-main-field {
+  background-color: grey;
+  color: white;
+  width: calc(70% - 20px);
   height: auto;
   margin: auto;
-  margin-top: 20px;
+  font-size: 2rem;
+  text-align: center;
   padding: 10px;
 }
 
-.item {
-  background-color: lightgray;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
+.main-content {
+  background-color: lightgrey;
+  width: 70%;
+  height: auto;
+  margin: auto;
   align-items: center;
-  margin-bottom: 10px;
+}
+
+.main-content:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.apartment-details {
+  background-color: lightgray;
+  font-size: 1.5rem;
+  text-align: center;
+  align-items: center;
+  border: 1px solid black;
+  float: left;
+  width: 8%;
+}
+
+.client-details {
+  background-color: lightgray;
+  font-size: 1.5rem;
+  text-align: center;
+  align-items: center;
+  border: 1px solid black;
+  float: left;
+  width: 8%;
 }
 
 .item-name {
@@ -66,18 +110,14 @@ header {
   margin: 10px;
 }
 
-.add-btn {
+.modify-btn {
   text-decoration: none;
-  background-color: rgb(224, 182, 182);
-  color: black;
-  width: 70%;
+  background-color: grey;
+  font-size: 1.5rem;
+  color: white;
   text-align: center;
-  padding: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px solid black;
 }
 
-.add-btn:hover {
-  background-color: brown;
+.modify-btn:hover {
+  background-color: rgb(56, 64, 180);
 }
