@@ -2,12 +2,12 @@ package pl.karolkoduje.fakedevelopmentresidentialbuilding.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 import pl.karolkoduje.fakedevelopmentresidentialbuilding.model.Client;
 import pl.karolkoduje.fakedevelopmentresidentialbuilding.service.ApartmentService;
 import pl.karolkoduje.fakedevelopmentresidentialbuilding.service.ClientService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -28,18 +28,30 @@ public class ClientController {
         model.addAttribute("clients", clients);
         return "clients";
     }
-//    @GetMapping("/client/{id}")
-//    public Client getClient(@PathVariable int id) {
-//        return clientService.getClientById(id);
-//    }
 
-    @GetMapping("/clients/back-homepage")
-    public String backHome(Model model) {
-        //TODO link from repository or inject apartments bean
-//        List<Apartment> = apartmentService.apartments;
-//        model.addAttribute("apartments", apartments);
-        return "home";
+    @GetMapping("/client/{id}")
+    public String getClient(@PathVariable int id, Model model) {
+        List<Client> clients = new ArrayList<>();
+        Client client = clientService.getClientById(id);
+        if(!client.getId().equals(null)){
+            clients.add(client);
+        };
+        model.addAttribute("clients", clients);
+        return "clients";
+
     }
 
+    @GetMapping("/clients/delete/{id}")
+    public String deleteClient(@PathVariable int id, Model model) {
+        List<Client> clients = clientService.getListWithRemovedClient(id);
+        model.addAttribute("clients", clients);
+        return "clients";
+    }
 
+    @PostMapping("/clients/new")
+    public String addNewClient(@PathVariable int id, Model model) {
+        List<Client> clients = clientService.getListWithRemovedClient(id);
+        model.addAttribute("clients", clients);
+        return "clients";
+    }
 }

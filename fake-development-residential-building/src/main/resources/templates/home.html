@@ -16,7 +16,7 @@
     </header>
     <div class="separator"></div>
     <div class="top-image-field">
-      <img class="top-image" th:src="@{images/graphic.jpg}"/>
+      <img class="top-image" th:src="@{images/visualisation.jpg}" />
     </div>
     <div class="separator"></div>
     <div class="top-links-field">
@@ -27,7 +27,7 @@
         <a href="/clients" class="link-btn">Clients register</a>
       </span>
       <span>
-        <a href="" class="link-btn">Apartments modification register</a>
+        <a href="/apartments-actions" class="link-btn">Apartments status modification register</a>
       </span>
     </div>
     <div class="separator"></div>
@@ -53,36 +53,52 @@
     </div>
     <div class="separator"></div>
     <div class="top-main-field">APARTMENTS LIST</div>
-    <div class="main-content">
-      <div class="apartment-details">Index</div>
-      <div class="apartment-details">Building</div>
-      <div class="apartment-details">Staircase</div>
-      <div class="apartment-details">Floor</div>
-      <div class="apartment-details">Number</div>
-      <div class="apartment-details">Area</div>
-      <div class="apartment-details">Rooms</div>
-      <div class="apartment-details">Status</div>
-      <div class="apartment-details">ClientId</div>
-    </div>
 
+    <div  class="main-content">
+        <div class="apartment-details">Index</div>
+        <div class="apartment-details">Building</div>
+        <div class="apartment-details">Staircase</div>
+        <div class="apartment-details">Floor</div>
+        <div class="apartment-details">Number</div>
+        <div class="apartment-details">Area</div>
+        <div class="apartment-details">Rooms</div>
+        <div class="apartment-details">Status</div>
+        <div class="apartment-details">ClientId</div>
+        <div class="apartment-details">Book</div>
+        <div class="apartment-details">Sell</div>
+        <div class="apartment-details-wide">Clear status</div>
+    </div>
     <div class="main-content" th:each="apartment : ${apartments}">
       <div class="apartment-details" th:text="${apartment.id}"></div>
       <div class="apartment-details" th:text="${apartment.building}"></div>
       <div class="apartment-details" th:text="${apartment.staircase}"></div>
       <div class="apartment-details" th:text="${apartment.floor}"></div>
-      <div class="apartment-details" th:text="${apartment.apartmentNumber}"></div>
+      <div
+        class="apartment-details"
+        th:text="${apartment.apartmentNumber}"
+      ></div>
       <div class="apartment-details" th:text="${apartment.apartmentArea}"></div>
       <div class="apartment-details" th:text="${apartment.amountOfRooms}"></div>
       <div class="apartment-details" th:text="${apartment.status}"></div>
-      <div class="apartment-details" th:text="${apartment.clientId}"></div>
+      <div class="modify-btn-field-narrow">
+        <a th:href="@{/client/{clientId}(clientId=${apartment.clientId})}" class="modify-btn">
+          <span th:text="${apartment.clientId}"></span>
+        </a>
+      </div>
 
-      <div class="apartment-details">
+      <div class="modify-btn-field-narrow">
         <a href="" class="modify-btn">Book</a>
       </div>
-      <div class="apartment-details">
+
+      <div class="modify-btn-field-narrow">
         <a href="" class="modify-btn">Sell</a>
       </div>
+
+      <div class="modify-btn-field-wide">
+        <a href="" class="modify-btn">Clear status</a>
+      </div>
     </div>
+
     <div class="separator"></div>
     <div class="top-main-field">Created in 2023</div>
   </body>

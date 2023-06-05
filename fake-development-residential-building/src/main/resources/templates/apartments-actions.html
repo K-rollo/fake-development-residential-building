@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:width="http://www.w3.org/1999/xhtml"
+        xmlns:border="http://www.w3.org/1999/xhtml"
+>
+<head>
+  <meta charset="UTF-8" />
+  <title>AppartmentsOffer</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+<header>
+  <span class="title">FaKE Development</span>
+</header>
+<div class="separator"></div>
+<div class="top-image-field">
+  <img class="top-image" th:src="@{images/visualisation.jpg}" />
+</div>
+<div class="separator"></div>
+<div class="top-links-field">
+      <span>
+        <a href="/" class="link-btn">Home</a>
+      </span>
+  <span>
+        <a href="/clients" class="link-btn">Clients register</a>
+      </span>
+  <span>
+        <a href="/apartments-actions" class="link-btn">Apartments status modification register</a>
+      </span>
+</div>
+
+<div class="separator"></div>
+<div class="top-main-field">APARTMENTS STATUS MODIFICATIONS</div>
+
+<div  class="main-content">
+    <div class="action-details">Index</div>
+    <div class="action-details">Apartment Id</div>
+    <div class="action-details">Action Type</div>
+    <div class="action-details">Client Id</div>
+    <div class="action-details-wide">Created</div>
+</div>
+<div class="main-content" th:each="apaction : ${apactions}">
+    <div class="action-details" th:text="${apaction.id}"></div>
+    <div class="action-details" th:text="${apaction.apartmentId}"></div>
+    <div class="action-details" th:text="${apaction.actionType}"></div>
+    <div class="action-details" th:text="${apaction.clientId}"></div>
+    <div class="action-details-wide" th:text="${apaction.created}"></div>
+</div>
+
+
+<div class="separator"></div>
+<div class="top-main-field">Created in 2023</div>
+</body>
+</html>

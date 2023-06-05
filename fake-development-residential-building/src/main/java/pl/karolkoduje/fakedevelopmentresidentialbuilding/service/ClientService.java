@@ -14,15 +14,24 @@ public class ClientService {
 
     private final ClientRepository clientRepository;
 
-   public List<Client> clients() {
-       return clientRepository.findAll();
-    }
-    public Client client() {
-        Optional<Client> found = clientRepository.findById(1);
-        return found.get();
+    public List<Client> clients() {
+        return clientRepository.findAll();
     }
 
-//    public Client getClientById(int id) {
-//        return clientsList.get(id);
-//    }
+    public Client getClientById(int id) {
+        Optional<Client> found = clientRepository.findById(id);
+        return found.orElseGet(Client::new);
+      }
+
+    public List<Client> getListWithRemovedClient(int id) {
+        System.out.println(clientRepository.findAll().stream()
+                .map(client -> client.getId())
+                .toList());
+        clientRepository.deleteAll();
+        System.out.println(clientRepository.findAll().stream()
+                .map(client -> client.getId())
+                .toList());
+        return clientRepository.findAll();
+    }
+
 }

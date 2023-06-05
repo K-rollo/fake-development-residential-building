@@ -5,7 +5,7 @@ h2 {
   color: blue;
 }
 header {
-  background-color: black;
+  background-color: rgb(56, 64, 100);
   color: white;
 }
 
@@ -42,7 +42,7 @@ header {
 
 .link-btn {
   text-decoration: none;
-  background-color: grey;
+  background-color: rgb(56, 64, 100);
   font-size: 2rem;
   color: white;
   text-align: center;
@@ -64,60 +64,125 @@ header {
   font-size: 2rem;
   text-align: center;
   padding: 10px;
+  border: 1px solid grey;
 }
 
 .main-content {
   background-color: lightgrey;
   width: 70%;
-  height: auto;
+  height: 30px;
   margin: auto;
-  align-items: center;
-}
-
-.main-content:after {
-  content: "";
-  display: block;
-  clear: both;
+  border: 1px solid grey;
 }
 
 .apartment-details {
   background-color: lightgray;
+  width: 100px;
+  height: 30px;
   font-size: 1.5rem;
   text-align: center;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid grey;
   float: left;
-  width: 8%;
+}
+.apartment-details-wide {
+  background-color: lightgray;
+  width: 150px;
+  height: 30px;
+  font-size: 1.5rem;
+  text-align: center;
+  align-items: center;
+  border: 1px solid grey;
+  float: left;
 }
 
 .client-details {
   background-color: lightgray;
+  width: 120px;
+  height: 30px;
   font-size: 1.5rem;
   text-align: center;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid grey;
   float: left;
-  width: 8%;
 }
 
-.item-name {
-  background-color: grey;
-  color: black;
+.client-details-narrow {
+  background-color: lightgray;
+  width: 100px;
+  height: 30px;
+  font-size: 1.5rem;
   text-align: center;
-  font-size: larger;
-  font-weight: bold;
-  border: 1px solid black;
-  margin: 10px;
+  align-items: center;
+  border: 1px solid grey;
+  float: left;
+}
+
+.client-details-wide {
+  background-color: lightgray;
+  width: 250px;
+  height: 30px;
+  font-size: 1.5rem;
+  text-align: center;
+  align-items: center;
+  border: 1px solid grey;
+  float: left;
+}
+.modify-btn-field-narrow {
+   background-color: rgb(56, 64, 100);
+   width: 100px;
+   height: 30px;
+   font-size: 1.5rem;
+   text-align: center;
+   align-items: center;
+   border: 1px solid grey;
+   float: left;
+  }
+
+.modify-btn-field-wide {
+   background-color: rgb(56, 64, 100);
+   width: 150px;
+   height: 30px;
+   font-size: 1.5rem;
+   text-align: center;
+   align-items: center;
+   border: 1px solid grey;
+   float: left;
 }
 
 .modify-btn {
   text-decoration: none;
-  background-color: grey;
   font-size: 1.5rem;
   color: white;
   text-align: center;
 }
 
-.modify-btn:hover {
+.modify-btn-field-wide:hover {
   background-color: rgb(56, 64, 180);
+}
+
+.modify-btn-field-narrow:hover {
+  background-color: rgb(56, 64, 180);
+}
+
+.action-details {
+  background-color: lightgray;
+   width: 250px;
+   height: 30px;
+   font-size: 1.5rem;
+   text-align: center;
+   align-items: center;
+   border: 1px solid grey;
+   float: left;
+}
+
+.action-details-wide {
+  background-color: lightgray;
+   width: 500px;
+   height: 30px;
+   font-size: 1.5rem;
+   text-align: center;
+   align-items: center;
+   border: 1px solid grey;
+   float: left;
 }

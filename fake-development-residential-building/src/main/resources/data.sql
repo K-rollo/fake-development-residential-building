@@ -27,3 +27,9 @@ values (5, 'B', '1', 2, 5, 103.20, 4, 'available', null);
 
 insert into apartment(id, building, staircase, floor, apartment_number, apartment_area, amount_of_rooms, status, client_id)
 values (6, 'B', '1', 3, 6, 44.43, 2, 'sold', 2);
+
+insert into ap_action (id, apartment_id, action_type, client_id, created)
+values (1, 1, 'Booked', 1, '2020-12-30 13:08:54.193');
+
+insert into ap_action (id, apartment_id, action_type, client_id, created)
+values (2, 1, 'Sold', 1, '2020-12-31 13:08:54.193');
